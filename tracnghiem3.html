@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Trắc nghiệm</title>
+</head>
+<body>
+	<div class="content">
+		<div id="tieude">TRẮC NGHIỆM</div>
+		<div id="tieude1">Điền đáp án</div>
+		<div class="cauhoi">
+			<div>Câu 1: Thẻ HTML nào được sử dụng để chỉ định chân trang của 1 trang web?</div>
+			<input type="text" class="da" id="cau1">
+		</div>
+		<div class="cauhoi">
+			<div>Câu 2: Thẻ h0 có tồn tại không ?</div>
+			<input type="text" class="da" id="cau2">
+		</div>
+		<div class="cauhoi">
+			<div>Câu 3: Có mấy thẻ heading?</div>
+			<input type="text" class="da" id="cau3">
+		</div>
+		<div class="cauhoi">
+			<div>Câu 4: Trong 1 trang web cần mấy cặp thẻ body?</div>
+			<input type="text" class="da" id="cau4">
+		</div>
+		<div class="cauhoi">
+			<div>Câu 5: Thuộc tính căn lề nội dung trong ô theo chiều ngang của table ?</div>
+			<input type="text" class="da" id="cau5">
+		</div>
+		<div class="cauhoi">
+			<div>Câu 6: Thuộc tính căn lề nội dung trong ô theo chiều dọc của table ?</div>
+			<input type="text" class="da" id="cau6">
+		</div>
+		<div class="cauhoi">
+			<div>Câu 7: Thuộc tính nào thiết lập màu nền cho bảng?</div>
+			<input type="text" class="da" id="cau7">
+		</div>
+		<div class="cauhoi">
+			<div>Câu 8: Thẻ xác định 1 hàng trong table?</div>
+			<input type="text" class="da" id="cau8">
+		</div>
+		<div class="cauhoi">
+			<div>Câu 9: Thuộc tính thiết lập input radio nào đó mặc định được chọn là ?</div>
+			<input type="text" class="da" id="cau9">
+		</div>
+		<div class="cauhoi">
+			<div>Câu 10: Để xác định kiểu chữ, kích thước, màu sắc... ta dùng thẻ nào?</div>
+			<input type="text" class="da" id="cau10">
+		</div>
+		<br><br>
+		<hr>
+		<br>
+		<div class="btn">
+			<button onclick="quaylai()" class="bl">Quay lại</button>
+			<button onclick="doi()" class="bl btn2">Nộp Bài</button>
+		</div>
+		<br><br>
+	</div>
+
+<!-- css -->
+<style>
+	*{
+		margin:0px;
+		padding:0px;
+	}
+	.content{
+		background:lightblue;
+		width:900px;
+		margin: 20px auto;
+		border:0px;
+		border-radius:10px;
+		padding:30px;
+	}
+	#tieude{
+		text-align:center;
+		font-size: 30px;
+		font-weight:bold;
+		font-family: arial;
+	}
+	#tieude1{
+		text-align:center;
+		font-size: 20px;
+/*		font-weight:bold;*/
+		font-family: arial;
+	}
+	.cauhoi{
+		font-size: 20px;
+		margin-left: 50px;
+		margin-top: 20px;
+	}
+	.da{
+/*		background: rgb(224,255,255);*/
+		background: white;
+		margin-left: 20px;
+		margin-top: 20px;
+		width: 750px;
+		height: 28px;
+		border: 0px;
+		border-radius: 15px;
+		padding: 7px;
+	}
+	/*#da:hover{
+		background: #BBBBBB;
+	}*/
+	hr{
+		background: black;
+		height:1px;
+	}
+	.bl{
+		width: 70px;
+		height: 30px;
+		border: 2px solid #0099CC;
+		border-radius: 6px;
+	}
+	.btn2{
+		margin: auto 0px auto auto;
+	}
+	.btn{
+		display: flex;
+		align-items: baseline;
+	}
+	body{
+		background-image:url('https://previews.123rf.com/images/bualuang123rf/bualuang123rf1703/bualuang123rf170300010/72944765-triangle-pastel-on-two-tone-color-background.jpg?fj=1');
+		background-attachment: fixed;
+	}
+</style>
+<!-- java -->
+<script type="text/javascript">
+	
+
+    function doi(){
+    	var question1 = document.getElementById('cau1');
+    	var question2 = document.getElementById('cau2');
+    	var question3 = document.getElementById('cau3');
+    	var question4 = document.getElementById('cau4');
+    	var question5 = document.getElementById('cau5');
+    	var question6 = document.getElementById('cau6');
+    	var question7 = document.getElementById('cau7');
+    	var question8 = document.getElementById('cau8');
+    	var question9 = document.getElementById('cau9');
+    	var question10 = document.getElementById('cau10');
+    	localStorage.setItem('cau1', question1.value);
+    	let score = 0;  // điểm mặc định = 0
+        if (question1.value == "footer") {
+            score += 3;    
+        }
+        if (question2.value == 'không' ) {
+            score += 3;    
+        }
+        if (question3.value == '6' ) {
+            score += 3;    
+        }
+        if (question4.value == '1' ) {
+            score += 3;    
+        }
+        if (question5.value == 'align' ) {
+            score += 3;    
+        }
+        if (question6.value == 'valign' ) {
+            score += 3;    
+        }
+        if (question7.value == 'bgcolor' ) {
+            score += 3;    
+        }
+        if (question8.value == 'tr' ) {
+            score += 3;    
+        }
+        if (question9.value == 'checked' ) {
+            score += 3;    
+        }
+        if (question10.value == 'font' ) {
+            score += 3;    
+        }
+        localStorage.setItem('điểm1',score);
+		window.location = 'trangkq.html';
+	}
+	function quaylai(){
+		window.location = 'tracnghiem2.html';
+    }
+	// function doi(){
+	// 	let score = 0;  // điểm mặc định = 0
+    //     if (question1 == "footer") {
+    //         score += 10;    
+    //     }
+    //     if (question2 == 'không' ) {
+    //         score += 10;    
+    //     }
+    //     if (question3 == '6' ) {
+    //         score += 10;    
+    //     }
+    //     if (question4 == '1' ) {
+    //         score += 10;    
+    //     }
+    //     if (question5 == 'align' ) {
+    //         score += 10;    
+    //     }
+    //     if (question6 == 'valign' ) {
+    //         score += 10;    
+    //     }
+    //     if (question7 == 'bgcolor' ) {
+    //         score += 10;    
+    //     }
+    //     if (question8 == 'tr' ) {
+    //         score += 10;    
+    //     }
+    //     if (question9 == 'checked' ) {
+    //         score += 10;    
+    //     }
+    //     if (question10 == 'font' ) {
+    //         score += 10;    
+    //     }
+    //     localStorage.setItem('điểm1',score);
+	// 	window.location = 'trangkq.html';
+	// }
+	// function quaylai(){
+	// 	window.location = 'tracnghiem2.html';
+	// }
+</script>
+</body>
+</html>

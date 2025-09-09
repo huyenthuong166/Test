@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<div id="tieude">Kết quả trắc nghiệm</div>
+	<div class="content">
+		<div class="content1">
+			<div id="sun"></div>
+			<div id="sun1"></div>
+		</div>
+	</div>
+	<img id="anh" src="https://maitran.files.wordpress.com/2019/05/75af431c7b39a3cf17a5e6b01152bb63.gif" alt="">
+	<button onclick="ve()">Về trang chủ</button>
+
+<!-- css -->
+<style>
+	#tieude{
+		font-size: 50px;
+		text-align: center;
+	}
+	.content{
+		background: #FFCCCC;
+		margin: 50px auto;
+		width: 650px;
+		height: 350px;
+		padding: 10px;
+
+	}
+	.content1{
+		background: lightyellow;
+		width: 600px;
+		height: 300px;
+		margin: 15px auto;
+		padding: 10px;
+	}
+	#sun{
+		font-family: arial;
+		margin-top: 40px;
+		font-size: 60px;
+		text-align: center;
+	}
+	#sun1{
+		font-size: 30px;
+		color: purple;
+		text-align: center;
+		margin-top: 30px;
+	}
+	#anh{
+		margin-left: 700px;
+	}
+	button{
+		margin-left: 200px;
+		height: 30px;
+		border: 2px solid grey;
+		background: lightblue;
+		font-weight: bold;
+	}
+	body{
+		background-image:url('https://previews.123rf.com/images/bualuang123rf/bualuang123rf1703/bualuang123rf170300010/72944765-triangle-pastel-on-two-tone-color-background.jpg?fj=1');
+		background-attachment: fixed;
+	}
+</style>
+<script type="text/javascript">
+	var đổi = document.getElementById('sun');
+	var đổi1 = document.getElementById('sun1');
+	var dtn1 = JSON.parse(localStorage.getItem('điểm'));
+	var dtn2 = JSON.parse(localStorage.getItem('điểm2'));
+	var dtn3 = JSON.parse(localStorage.getItem('điểm1'));
+	var tongdiem = dtn1 + dtn2 + dtn3;
+	if(tongdiem >= 80){
+		đổi.innerText = tongdiem + ' điểm';
+		đổi1.innerText= 'Chúc mừng bạn hoàn thành bài trắc nghiệm';
+	}
+	else{
+		đổi.innerText = tongdiem + ' điểm';
+		đổi1.innerText= 'Rất tiếc bạn chưa vượt qua bài trắc nghiệm , cố gắng trong lần tới nhé.';
+	}
+	console.log(tongdiem);
+	function ve(){
+		window.location = 'Index.html';
+	}
+</script>
+</body>
+</html>

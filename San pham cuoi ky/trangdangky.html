@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>trang đăng ký </title>
+</head>
+<body>
+  <div class="content">
+    <div id="tieude"><u>Đăng Ký</u></div>
+    <div id="a1">Họ và tên: <input id="ten" type="text"></div>
+    <div id="khoa">
+      MSV: <input id="msv" type="text">
+      <div id="lop">Ngày sinh: <input type="date" id="date"></div>
+    </div>
+    <div id="khoa">
+      Khoa: <input id="khoa1" type="text">
+      <div id="lop">Lớp: <input type="text" id="lop1"></div>
+    </div>
+    <div>Email: <input type="email" id="email"></div>
+    <div>Mật Khẩu: <input id="mk" type="password"></div>
+    <div>Nhập lại mật khẩu: <input type="password" id="nlmk"></div>
+    <div><button onclick="doi()">Đăng Ký</button></div>
+    <a href="trangdangnhap.html">Nhấp vào để đăng nhập</a>
+  </div>
+
+
+
+<style>
+  *{
+    margin:0px;
+    padding:0px;
+  }
+  .content{
+    background:lightblue;
+    width:900px;
+    height:600px;
+    margin: 100px auto;
+    border:0px;
+    border-radius:10px;
+    padding:30px;
+  }
+  #tieude{
+    text-align:center;
+    margin-top:10px;
+    font-size:30px;
+    font-weight:bold;
+  }
+  div{
+    margin-top:40px;
+    margin-left: 20px;
+  }
+  #khoa{
+    display:flex;
+    align-items:baseline;
+    margin-top:-10px;
+  }
+  #lop{
+    margin-left: 280px;
+  }
+  #lop1{
+    margin-left: 40px;
+  }
+  #ten{
+    width:280px;
+    margin-left: 58px;
+  }
+  #msv{
+    margin-left: 90px;
+  }
+  #khoa1{
+    margin-left: 88px;  
+  }
+  #email{
+    margin-left: 80px;  
+    width:280px;
+  }
+  #date{
+    width: 120px;
+  }
+  button{
+    margin-left:380px;
+    margin-top:50px;
+    margin-bottom: 15px;
+    width: 130px;
+    height:40px;
+  }
+  #mk{
+    margin-left: 55px;  
+  }
+  #a1{
+    margin-top: 70px; 
+  }
+  input{
+    height:20px;
+  }
+  a{
+    margin-left: 372px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #0066FF
+
+;
+  }
+  body{
+    background-image:url('https://previews.123rf.com/images/bualuang123rf/bualuang123rf1703/bualuang123rf170300010/72944765-triangle-pastel-on-two-tone-color-background.jpg?fj=1');
+  }
+</style>
+
+
+
+<script>
+  function doi(){
+    var user = {
+      ten: document.getElementById('ten').value,
+      msv: document.getElementById('msv').value,
+      date: document.getElementById('date').value,
+      khoa: document.getElementById('khoa1').value,
+      lop: document.getElementById('lop1').value,
+      email: document.getElementById('email').value,
+      mk: document.getElementById('mk').value,
+      nlmk: document.getElementById('nlmk').value
+    }
+    var bool = true;
+    var check;
+    for (x in localStorage){
+      check = JSON.parse(localStorage[x]);
+      if (check.ten == user.ten && check.mk == user.mk){
+        alert('tài khoản đã tồn tại');
+        break;
+      }
+      else{
+         localStorage.setItem('user', JSON.stringify(user));
+        alert('đăng ký thành công');
+        break;
+      }
+    }
+    }
+</script>
+</body>
+</html>

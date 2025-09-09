@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>THông tin</title>
+	<style type="text/css">
+
+		
+	</style>
+</head>
+<body>
+	<div class="divlon">
+		<div class="divlon1">
+
+	<div class="div1">
+		<div>
+			<img src="https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg" style: height="200px">
+		</div>
+		<br>
+	</div>
+	<br>
+
+	<br>
+	<div class=" div2">
+		<h2>Thông tin sinh viên</h2>
+		<hr>
+		<div class="m1">Mã sinh viên
+			<div class="n1" id="msv" > 725105170</div>
+		</div>
+		<hr>
+		<div class="m1">Họ tên
+			<div class="n1" id="o3"> Lê Thị Huyền Trang</div>
+		</div>
+		<hr>
+		<div class="m1">Giới tính
+			<div class="n1" id="o4"> .............................................</div>
+		</div>
+		<hr>
+		<div class="m1">CMND
+			<div class="n1" id="o3"> ........................................</div>
+		</div>
+		<hr>
+		<div class="m1">Lớp
+			<div class="n1" id="o7"> E4</div>
+		</div>
+		<hr>
+		<div class="m1">Số tài khoản
+			<div class="n1"  id="o6">.............................</div>
+		</div>
+		<hr>
+		
+		
+		<div class="m1">Ngoại ngữ
+			<div class="n1" id="o4">....................................... </div>
+		</div>
+		<hr>
+	</div>
+</div>
+	<div class="divto">
+		<h2>Thông tin liên lạc</h2>
+		<hr>
+		<div class="m1"> Dân tộc
+        <div id="o3">......................................</div>
+		 </div>
+		 <hr>
+		 <div class="m1"> Tôn giáo
+        <div id="o3"></div>
+		 </div>
+		 <hr>
+		 <div class="m1"> Quốc gia
+        <div id="o3">Tỉnh thành</div>
+		 </div>
+		 <hr>
+		 <div class="m1"> Quận huyện
+        <div id="o3"></div>
+		 </div>
+		 <hr>
+		 <div class="m1"> Di động
+        <div id="o3"></div>
+		 </div>
+		 <hr>
+		 <div class="m1"> Email cá nhân
+        <div id="o3"></div>
+		 </div>
+		 <hr>
+
+
+	<button onclick="ve()">quay về</button>
+	</div>
+</div>
+	<style type="text/css">
+		.divlon{
+			display:flex;
+			flex-direction:row;
+		}
+		.div1{
+			margin-top: 30px;
+			margin-left:90px;
+			width:600px;
+			height: 280px;
+			border: solid 1px ;
+			border-radius:10px;
+			box-shadow: 1px 1px 1px 1px;
+			
+
+		}
+		img{
+			margin-top:20px;
+			margin-left: 150px;
+			border-radius: 100px;
+		}
+		.div2{
+			margin-left:auto;
+			width: 600px;
+			height:450px;
+			border:solid  1px;
+			border-radius: 10px;
+			box-shadow: 1px 1px 1px 1px;
+
+
+		}
+		h2{
+            margin-left:20px;
+		}
+		.m1{
+			margin-left: 50px;
+			width: 600px;
+			height:30px;
+			display:flex;
+			flex-direction:row;
+		}
+		.n1{
+			margin-left: 100px;
+		}
+		#o3{
+			margin-left: 140px;
+		}
+		#o4{
+			margin-left: 130px;
+		}
+		#o5{
+			margin-left: 90px;
+		}
+		#o6{
+			margin-left: 110px;
+		}
+		#o7{
+			margin-left: 160px;
+		}
+		.divto{
+			margin-left: auto;
+			margin-right:50px;
+			margin-top: 30px;
+			width: 600px;
+			height:350px;
+			border:solid 1px;
+			border-radius: 10px;
+			box-shadow: 1px 1px 1px 1px;
+		}
+		
+.divlon1{
+			display:flex;
+			flex-direction: column;
+		}
+		body{
+		background-image: url("https://previews.123rf.com/images/bualuang123rf/bualuang123rf1703/bualuang123rf170300010/72944765-triangle-pastel-on-two-tone-color-background.jpg?fj=1");
+}
+</style>
+<script>
+	var ten = document.getElementById('o3');
+	var msv = document.getElementById('msv');
+	var lop = document.getElementById('o7');
+	var email = document.getElementById('o7');
+	var thongtin = JSON.parse(localStorage.getItem('user'));
+	ten.innerText = thongtin.ten ;
+	msv.innerText = thongtin.msv ;
+	lop.innerText = thongtin.lop ;
+	function ve(){
+		window.location = 'Index.html';
+	}
+</script>
+</body>
+</html>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>trang đăng nhập</title>
+</head>
+<body>
+	<div class="content">
+		<div class="a1">log in</div>
+		<div><input type="text" placeholder="Nhập Tên" id="ten_dn"></div>
+		<div><input type="password" placeholder="Mật Khẩu" id="mk_dn"></div>
+		<div>
+			<button onclick="moi()">Đăng nhập</button>
+			<a href="" id="b1">Quên mật khẩu</a>
+		</div> 
+		<div class="a2">
+			<hr> 
+			<div>OR</div>
+			<hr>
+		</div>
+		<a href="trangdangky.html" id="b2">Tạo tài khoản mới</a>
+	</div>
+//
+<style>
+	.content{
+		background: pink;
+		width: 400px;
+		height: 600px;
+		margin-top: 100px;
+		margin-left:200px;
+		border-radius: 10px;
+		padding: 30px;
+	}
+	.a1{
+		font-size: 60px;
+		margin-left: 140px;
+		margin-top: 20px;
+/*		background: blue;*/
+		margin-bottom: 30px
+	}
+	input{
+		margin-top: 30px;
+		height: 40px;
+		width: 100%;
+		border: 1px solid grey;
+		border-radius: 8px;
+		text-indent: 10px;
+	}
+	button{
+		margin-top: 30px;
+		height: 30px;
+		border: 1px solid grey;
+		border-radius: 5px;
+	}
+	#b1{
+		text-decoration: none;
+		font-family: arial;
+		margin-left: 200px;
+		color: #3366CC;
+	}
+	hr{
+		margin-top: 20px;
+		background: #777777;
+		height: 1px;
+		width: 180px;
+	}
+	.a2{
+		display: flex;
+		flex-direction: row;
+		margin-bottom: 50px;
+		margin-top: 10px;
+	}
+	.a2 div{
+		margin-top: 12px;
+		font-family: arial;
+		font-size: 13px;
+	}
+	#b2{
+		text-decoration: none;
+		margin-left: 100px;
+		font-size: 25px;
+		color: #0000FF;
+	}
+	body{
+		background-image: url("https://previews.123rf.com/images/bualuang123rf/bualuang123rf1703/bualuang123rf170300010/72944765-triangle-pastel-on-two-tone-color-background.jpg?fj=1");
+	}
+</style>
+<!--  -->
+<script>
+	function moi(){
+		var tendn = document.getElementById('ten_dn').value;
+		var mkdn = document.getElementById('mk_dn').value;
+		console.log(tendn);
+				console.log(mkdn);
+		var kt;
+		for(x in localStorage){
+			kt = JSON.parse(localStorage[x]);
+			if(kt.ten == tendn && kt.mk == mkdn){
+				alert('đăng nhập thành công');
+				window.location = 'Index.html';
+				break;
+			} 
+			else{
+				alert('tài khoản không tồn tại');
+				break;
+			}
+		}
+	}
+</script>
+</body>
+</html>
